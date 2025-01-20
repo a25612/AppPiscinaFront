@@ -83,6 +83,30 @@
       background-color: #1498a9;
     }
   }
+    // Estilo para fines de semana
+    .weekend-day {
+      background-color: rgba(255, 0, 0, 0.05) !important;
+      
+      .fc-daygrid-day-number {
+        color: rgb(255, 0, 0) !important;
+      }
+    }
+  
+    // Estilo para festivos
+    .holiday {
+      background-color: rgba(255, 0, 0, 0.05) !important;
+      
+      .fc-daygrid-day-number {
+        color: rgb(255, 0, 0) !important;
+        font-weight: bold;
+      }
+    }
+  
+    // Estilo para eventos festivos
+    .holiday-event {
+      pointer-events: none;
+    }
+  
   
   @media (max-width: 768px) {
     #calendar-container {
