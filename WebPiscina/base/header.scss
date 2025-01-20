@@ -1,33 +1,35 @@
-@import '../base/variables.scss';
+@import "../base/variables";
 
-// Estilos principales del header
 .header {
   background-color: $color-principal;
   color: #fff;
   font-family: $font-title;
   padding: 1rem;
+  position: relative;
+  z-index: 2000;
 
-  &__container {
+  &-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
   }
 
-  &__logo {
+  &-titulo {
     font-size: 1.8rem;
     font-weight: bold;
   }
 
-  // Botón del menú hamburguesa
-  &__toggle {
+  &-desplegable { 
     display: none;
     flex-direction: column;
     gap: 4px;
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 2001;
 
     .bar {
       display: block;
@@ -38,15 +40,16 @@
     }
   }
 
-  // Estilos del menú
-  &__nav {
-    &__menu {
+  &-nav {
+    &-menu {
       list-style: none;
       display: flex;
       gap: 24px;
+      margin: 0;
+      padding: 0;
 
       li {
-        .header__link {
+        .header-link {
           text-decoration: none;
           color: #fff;
           font-size: 16px;
@@ -58,50 +61,47 @@
         }
       }
     }
-
-    // Ocultar el menú en móviles
-    &.hidden {
-      display: none;
-    }
-
-    &.active {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
   }
 }
 
 // Media Query para móviles
 @media (max-width: 768px) {
-  .header__toggle {
+  .header-desplegable {
     display: flex;
   }
 
-  .header__nav {
+  .header-nav {
+    display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; // Se posiciona justo debajo del header
     left: 0;
     width: 100%;
     background: $color-principal;
-    padding: 1rem 0;
-    display: none;
-
+    z-index: 1999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
     &.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: block;
+      padding: 1rem 0;
     }
 
-    &__menu {
+    &-menu {
       flex-direction: column;
-      gap: 12px;
-
+      align-items: center;
+      gap: 0.5rem;
+      
       li {
-        .header__link {
-          color: #fff;
-          font-size: 1rem;
-          text-decoration: none;
+        width: 100%;
+        text-align: center;
+        
+        .header-link {
+          display: block;
+          padding: 0.75rem 0;
+          font-size: 1.1rem;
+          
+          &:hover {
+            background-color: rgba(255,255,255,0.1);
+          }
         }
       }
     }
