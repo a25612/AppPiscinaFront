@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piscina ATADES</title>
-  <link rel="stylesheet" href="/build/styles.css">
+  <title>Servicios ATEMITA</title>
+  <link rel="stylesheet" href="../build/styles.css">
   <link rel="icon" href="https://www.atades.org/wp-content/uploads/atades-logo-bottom@3x-e1729849182416.png"
     type="image/png">
 
@@ -18,18 +18,23 @@
 <body>
   <header class="header">
     <div class="header__container">
-      <h1 class="header__logo">Piscina ATADES</h1>
-      <nav class="header__nav">
-        <ul class="header__menu">
-          <li class="header__menu-item"><a href="/html/home.html" class="header__link">Home</a></li>
-          <li class="header__menu-item"><a href="/html/servicios.html" class="header__link">Servicios</a></li>
-          <li class="header__menu-item"><a href="#contacto" class="header__link">Contacto</a></li>
-          <li class="header__menu-item"><a href="#sobre-nosotros" class="header__link">Sobre Nosotros</a></li>
-        </ul>
-      </nav>
+        <h1 class="header__logo">Servicios ATEMITA</h1>
+        <button class="header__toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li><a href="../html/home.html" class="header__link">Home</a></li>
+                <li><a href="../html/servicios.html" class="header__link">Servicios</a></li>
+                <li><a href="#contacto" class="header__link">Contacto</a></li>
+                <li><a href="#sobre-nosotros" class="header__link">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
-
+</header>
+  
   <div id="calendar-container"></div>
 
   <div id="event-modal" class="modal-calendario" style="display: none;">
@@ -48,7 +53,9 @@
     </div>
   </footer>
 
-  <script src="/js/calendario.js"></script>
+  <script src="../js/calendario.js"></script>
+  <script src="../js/home.js" defer></script>
+
 </body>
 
 </html>

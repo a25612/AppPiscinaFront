@@ -1,96 +1,109 @@
-@import '../base/variables';
+@import '../base/variables.scss';
 
-// Estilos para el Header
+// Estilos principales del header
 .header {
-    background-color: $color-principal;
-    color: #FFFFFF;
-    font-family: $font-title;
-    padding: 1rem 2rem;
+  background-color: $color-principal;
+  color: #fff;
+  font-family: $font-title;
+  padding: 1rem;
 
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    &__logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-
-    &__nav {
-        &__menu {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-            margin: 0;
-            padding: 0;
-        }
-
-        &__menu-item {
-            .header__link {
-                text-decoration: none;
-                color: #FFFFFF;
-                font-size: 16px;
-                transition: color 0.3s ease;
-
-                &:hover {
-                    color: $color-secundario;
-                }
-            }
-        }
-    }
-}
-
-.header__menu {
-    list-style: none; // Elimina los puntos de la lista
+  &__container {
     display: flex;
-    gap: 24px; // Espaciado entre los elementos del menú
-    margin: 0;
-    padding: 0;
-}
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.header__menu-item {
-    margin: 0;
-}
+  &__logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
 
-.header__link {
-    text-decoration: none; // Elimina el subrayado de los enlaces
-    color: #FFFFFF; // Color del texto blanco
-    font-size: 16px; // Ajusta el tamaño del texto
-    transition: color 0.3s ease; // Transición suave al pasar el cursor
-}
-@media (max-width: 768px) {
-    .header {
-      padding: 0.8rem 1rem;
-  
-      &__container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-  
-      &__logo {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-  
-      &__nav {
-        &__menu {
-          flex-direction: column;
-          gap: 12px; // Reduce el espacio entre los elementos
-          text-align: left;
-          width: 100%;
+  // Botón del menú hamburguesa
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+  }
+
+  // Estilos del menú
+  &__nav {
+    &__menu {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+
+      li {
+        .header__link {
+          text-decoration: none;
+          color: #fff;
+          font-size: 16px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $color-secundario;
+          }
         }
       }
-  
-      .header__link {
-        font-size: 14px; // Ajusta el tamaño del texto para móviles
+    }
+
+    // Ocultar el menú en móviles
+    &.hidden {
+      display: none;
+    }
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}
+
+// Media Query para móviles
+@media (max-width: 768px) {
+  .header__toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $color-principal;
+    padding: 1rem 0;
+    display: none;
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__menu {
+      flex-direction: column;
+      gap: 12px;
+
+      li {
+        .header__link {
+          color: #fff;
+          font-size: 1rem;
+          text-decoration: none;
+        }
       }
     }
   }
-  
-
-  
-  
+}

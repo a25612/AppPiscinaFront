@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar-container');
   
     const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth', // Vista mensual
+      initialView: 'dayGridMonth', // Vista inicial: Mes
       locale: 'es', // Idioma español
       headerToolbar: {
-        left: 'prev,next today', // Botones de navegación
-        center: 'title', // Título del mes
-        right: 'dayGridMonth,timeGridWeek,timeGridDay', // Opciones de vista
+        left: 'prev,next today', // Botones para pasar de mes 
+        center: 'title', 
+        right: 'dayGridMonth', // Opciones de Vista
       },
       buttonText: {
         today: 'Hoy',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         week: 'Semana',
         day: 'Día',
       },
-      height: 600, // Altura personalizada
+      height: 600, // Altura
       events: [
         {
           title: 'Terapia Acuática',
