@@ -1,0 +1,83 @@
+@import '../base/variables.scss';
+
+// Contenedor principal de login
+.div-login {
+  background-color: $color-fondo;
+  width: 90%;
+  max-width: 400px;
+  padding: 32px;
+  text-align: center;
+
+  // Logo de la página
+  .logo {
+    img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: $font-title;
+      font-size: 24px;
+      color: $color-principal;
+    }
+  }
+
+  // Formulario de login
+  .formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    // Campos del formulario
+    .formulario-data {
+      text-align: left;
+
+      label {
+        font-family: $font-content;
+        font-size: 14px;
+        color: $color-principal;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        font-family: $font-content;
+        font-size: 16px;
+        color: black;
+        padding: 8px;
+        border: none;
+        border-bottom: 1px solid $color-secundario;
+        background: transparent;
+        outline: none;
+      }
+    }
+
+    // Enlace para registrarse
+    .registrarme {
+      text-align: right;
+
+      a {
+        font-size: 15px;
+        color: $color-secundario;
+        text-decoration: none;
+      }
+    }
+
+    // Botón para iniciar sesión
+    .btn-iniciar-sesion {
+      font-family: $font-content;
+      font-size: 16px;
+      background-color: $color-principal;
+      color: $color-fondo;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($color-principal, 10%);
+      }
+    }
+  }
+}

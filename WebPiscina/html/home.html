@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piscina ATADES</title>
+  <link rel="stylesheet" href="/build/styles.css">
+  <link rel="icon" href="https://www.atades.org/wp-content/uploads/atades-logo-bottom@3x-e1729849182416.png"
+    type="image/png">
+
+  <!-- FullCalendar actualizado -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__logo">Piscina ATADES</h1>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a href="/html/home.html" class="header__link">Home</a></li>
+          <li class="header__menu-item"><a href="/html/servicios.html" class="header__link">Servicios</a></li>
+          <li class="header__menu-item"><a href="#contacto" class="header__link">Contacto</a></li>
+          <li class="header__menu-item"><a href="#sobre-nosotros" class="header__link">Sobre Nosotros</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="calendar-container"></div>
+
+  <div id="event-modal" class="modal-calendario" style="display: none;">
+    <div class="modal-content">
+        <button id="close-modal" class="close-button">&times;</button>
+        <h2 id="event-title"></h2>
+        <p id="event-time"></p>
+        <button id="cancel-event" class="cancel-button">Cancelar</button>
+    </div>
+</div>
+
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">© 2024 Terapias Acuáticas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/js/calendario.js"></script>
+</body>
+
+</html>

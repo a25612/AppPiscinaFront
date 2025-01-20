@@ -1,0 +1,19 @@
+@import '../base/variables';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-content;
+    background-color: $color-fondo;
+  }
+  
+  main {
+    padding-top: 80px; // Altura del header
+    padding-bottom: 80px; // Altura del footer
+    min-height: calc(100vh - 160px); // Ajusta al espacio restante
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  

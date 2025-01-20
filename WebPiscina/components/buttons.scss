@@ -1,0 +1,58 @@
+@import '../base/variables';
+
+// Botón de iniciar sesión
+.btn-iniciar-sesion {
+    background-color: $color-principal;
+    color: $color-fondo;
+    font-family: $font-title;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 11px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $color-secundario;
+    }
+}
+
+// Botón de registro
+.btn-registro {
+    background-color: $color-principal;
+    color: $color-fondo;
+    font-family: $font-title;
+    font-size: 18px;
+    padding: 11px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $color-secundario;
+    }
+}
+
+.btn-reservar {
+    background-color: $color-principal; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+  }
+  
+  .btn-reservar:hover {
+    background-color: #45a049; 
+    transform: translateY(-2px); 
+  }
+  
+  .btn-reservar:active {
+    background-color: #388e3c;
+    transform: translateY(1px); 
+  }
+  
