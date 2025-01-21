@@ -2,15 +2,14 @@
 @use '../pages/login.scss';
 @use '../pages/registro.scss';
 
-@use '../base/body.scss';
-@use '../base/header.scss';
-@use '../base/footer.scss';
+@use '../layout/body.scss';
+@use '../layout/header.scss';
+@use '../layout/footer.scss';
 
 
 
-
+@use '../components/perfil.scss';
 @use '../components/buttons.scss';
-@use '../components/modal.scss';
 
 
 

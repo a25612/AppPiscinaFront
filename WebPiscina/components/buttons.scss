@@ -2,57 +2,77 @@
 
 // Botón de iniciar sesión
 .btn-iniciar-sesion {
-    background-color: $color-principal;
-    color: $color-fondo;
-    font-family: $font-title;
-    font-size: 18px;
-    margin-top: 20px;
-    padding: 11px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: $color-principal;
+  color: $color-fondo;
+  font-family: $font-title;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 11px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: $color-secundario;
-    }
+  &:hover {
+    background-color: $color-secundario;
+  }
 }
 
 // Botón de registro
 .btn-registro {
-    background-color: $color-principal;
-    color: $color-fondo;
-    font-family: $font-title;
-    font-size: 18px;
-    padding: 11px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: $color-principal;
+  color: $color-fondo;
+  font-family: $font-title;
+  font-size: 18px;
+  padding: 11px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: $color-secundario;
-    }
+  &:hover {
+    background-color: $color-secundario;
+  }
 }
 
-.btn-reservar {
-    background-color: $color-principal; 
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.3s ease; 
+.btn-calendario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 12px;
+  gap: 8px;
+  height: 40px;
+  width: 50px;
+  border: none;
+  margin-top: -40px;
+  background: $color-principal;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 100px;
+
+  &:hover {
+    background: $color-secundario;
+
+    .svg-icon {
+      animation: slope 1s linear infinite;
+    }
   }
-  
-  .btn-reservar:hover {
-    background-color: #45a049; 
-    transform: translateY(-2px); 
+
+  .lable {
+    line-height: 22px;
+    font-size: 17px;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
   }
-  
-  .btn-reservar:active {
-    background-color: #388e3c;
-    transform: translateY(1px); 
+}
+
+@keyframes slope {
+  0% {}
+
+  50% {
+    transform: rotate(10deg);
   }
-  
+
+  100% {}
+}
