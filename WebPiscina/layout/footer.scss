@@ -1,56 +1,31 @@
 @import '../base/variables';
 
 .footer {
-    background-color: $color-secundario;
-    color: #FFFFFF;
-    font-family: $font-content;
-    padding: 24px 32px;
-    position: relative;
-    margin-top: 50px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  
+  background-color: $color-secundario;
+  color: #FFFFFF;
+  font-family: $font-content;
+  padding: 24px 32px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px;
+
     &-container {
-      display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  
-    &-text {
-      font-size: 14px;
       text-align: center;
     }
-  
-    &__nav {
-      display: flex;
-      gap: 16px;
-  
-      .footer__link {
-        text-decoration: none;
-        color: #FFFFFF;
-        font-size: 14px;
-        transition: color 0.3s ease;
-      }
+
+    &-text {
+      margin-bottom: 1rem;
+      font-size: 12px; /* Reduce el tamaño del texto */
     }
   }
-  @media (max-width: 768px) {
-    .footer {
-      padding: 16px;
-  
-      &-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-  
-      &-text {
-        margin-bottom: 1rem;
-        font-size: 12px; // Reduce el tamaño del texto
-      }
-      }
-    }
+}
+
 
   

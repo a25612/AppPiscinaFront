@@ -60,7 +60,7 @@
           transition: color 0.3s ease;
 
           &:hover {
-            color: $color-secundario;
+            color: #c1c4c6;
           }
         }
       }
@@ -84,8 +84,11 @@
 // Animación del icono de menú
 @keyframes slope {
   0% {}
+
   50% {
     transform: rotate(10deg);
   }
+
   100% {}
 }
+

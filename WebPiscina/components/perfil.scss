@@ -1,8 +1,8 @@
-// Variables
+@import '../base/variables';
+
 $burger-line-width: 1.125em;
 $burger-line-height: 0.125em;
 $burger-offset: 0.625em;
-$burger-bg: #00bf63;
 $burger-color: #333;
 $burger-line-border-radius: 0.1875em;
 $burger-diameter: 3.125em;
@@ -11,7 +11,8 @@ $burger-line-transition: 0.3s;
 $burger-transition: all 0.1s ease-in-out;
 $burger-hover-scale: 1.1;
 $burger-active-scale: 0.95;
-$burger-enable-outline-color: $burger-bg;
+$burger-enable-outline-color: #1498a9;
+;
 $burger-enable-outline-width: 0.125em;
 $burger-enable-outline-offset: $burger-enable-outline-width;
 
@@ -38,7 +39,7 @@ $nav-button-padding-x: 1rem;
 $nav-button-padding-y: 0.375em;
 $nav-button-border-radius: 0.375em;
 $nav-button-font-size: 17px;
-$nav-button-hover-bg: #00bf63;
+$nav-button-hover-bg: #d2d5d8;
 $nav-button-hover-text-color: #fff;
 $nav-button-distance: 0.875em;
 
@@ -61,10 +62,11 @@ $underline-margin-y: 0.3125em;
         position: relative;
         align-items: center;
         justify-content: center;
-        background: $burger-bg;
+        background: $color-secundario;
         width: $burger-diameter;
         height: $burger-diameter;
         border-radius: $burger-btn-border-radius;
+        margin-right: 40px;
         border: none;
         cursor: pointer;
         overflow: hidden;
@@ -87,11 +89,9 @@ $underline-margin-y: 0.3125em;
     }
 
     .popup-window {
-        transform: scale($nav-default-scale);
+        transform: scale($nav-default-scale) translateX(-50%);
         visibility: hidden;
         opacity: 0;
-        right: auto; // Asegúrate de deshabilitar `right` si estaba establecido.
-        transform: translateX(-50%);
         position: absolute;
         padding: $nav-padding-y $nav-padding-x;
         background: $nav-bg;
@@ -100,19 +100,11 @@ $underline-margin-y: 0.3125em;
         border-radius: $nav-border-radius;
         box-shadow: $nav-shadow-width $nav-shadow-color;
         border: $nav-border-width solid $nav-border-color;
-        top: calc($burger-diameter + $burger-enable-outline-width + $burger-enable-outline-offset );
-        left: $nav-position-left;
-        right: $nav-position-right;
+        top: calc(100% + $burger-enable-outline-width + $burger-enable-outline-offset);
+        left: -75%;
+        transform-origin: top center;
         transition: $burger-transition;
         margin-top: 10px;
-
-        legend {
-            padding: $nav-title-padding-y $nav-title-padding-x;
-            margin: 0;
-            color: $nav-title-color;
-            font-size: $nav-title-size;
-            text-transform: uppercase;
-        }
 
         ul {
             margin: 0;
@@ -136,14 +128,14 @@ $underline-margin-y: 0.3125em;
 
                 &:hover,
                 &:focus-visible {
-                    color: $nav-button-hover-text-color;
+
                     background: $nav-button-hover-bg;
                 }
             }
 
             li:nth-child(1) svg,
             li:nth-child(2) svg {
-                color: $burger-bg;
+                color: $color-secundario;
             }
 
             li:nth-child(4) svg,

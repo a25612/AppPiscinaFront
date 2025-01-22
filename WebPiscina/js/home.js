@@ -2,7 +2,6 @@ function abrirMenu() {
     const nav = document.querySelector('.header-nav');
     const barras = document.querySelectorAll('.bar');
     
-    // Toggle de la clase active
     nav.classList.toggle('active');
 
     if (nav.classList.contains('active')) {
@@ -20,7 +19,6 @@ function abrirMenuIzquierda() {
     const contenedor = document.querySelector('.desplegable-izquierda');
     const nav = document.querySelector('.nav-izquierda');
 
-    // Toggle de la clase active
     contenedor.classList.toggle('active');
     nav.classList.toggle('active');
 
@@ -47,3 +45,30 @@ function cerrarMenuFuera(event) {
 }
 
 
+function abrirCalendario() {
+    const contenedor = document.querySelector('.calendario-desplegable');
+    const nav = document.querySelector('.nav-calendario');
+
+    contenedor.classList.toggle('active');
+    nav.classList.toggle('active');
+
+    // Si el calendario está activo, añade listener para cerrar al hacer clic fuera
+    if (nav.classList.contains('active')) {
+        document.addEventListener('click', cerrarCalendarioFuera);
+    } else {
+        document.removeEventListener('click', cerrarCalendarioFuera);
+    }
+}
+
+function cerrarCalendarioFuera(event) {
+    const contenedor = document.querySelector('.calendario-desplegable');
+    const nav = document.querySelector('.nav-calendario');
+    const btn = document.querySelector('.btn-calendario');
+
+    // Verifica si el clic ocurrió fuera del calendario y del botón
+    if (!nav.contains(event.target) && !btn.contains(event.target)) {
+        contenedor.classList.remove('active');
+        nav.classList.remove('active');
+        document.removeEventListener('click', cerrarCalendarioFuera);
+    }
+}
