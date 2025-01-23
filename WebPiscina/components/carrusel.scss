@@ -1,0 +1,79 @@
+@import '../base/variables';
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    margin-left: 40px;
+    padding: 90px 10px 0;
+  
+    &__container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding-bottom: 16px;
+      scroll-behavior: smooth;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  
+    &__card {
+      flex: 0 0 80%; // Ocupa el 80% del ancho en móvil
+      scroll-snap-align: center;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &__image {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+  
+    &__content {
+      padding: 12px;
+  
+      .carousel__title {
+        font-family: 'Montserrat Bold', sans-serif;
+        font-size: 16px;
+        color: #333;
+        margin: 0 0 8px;
+      }
+  
+      .carousel__date {
+        font-family: 'Open Sans Regular', sans-serif;
+        font-size: 14px;
+        color: #666;
+      }
+    }
+  
+    &__scrollbar {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      background-color: #ddd;
+      border-radius: 4px;
+      margin-top: 8px;
+      overflow: hidden;
+      cursor: pointer;
+  
+      .carousel__thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 25%; // Tamaño inicial del "pulgar", ajusta según el número de cartas
+        background-color: #007bff;
+        border-radius: 4px;
+        transition: transform 0.2s;
+      }
+    }
+  }
+  

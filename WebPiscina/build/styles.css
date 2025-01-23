@@ -543,4 +543,72 @@ main {
   right: 54%;
 }
 
+.carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  margin-left: 40px;
+  padding: 90px 10px 0;
+}
+.carousel__container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+}
+.carousel__container::-webkit-scrollbar {
+  display: none;
+}
+.carousel__card {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.carousel__image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+.carousel__content {
+  padding: 12px;
+}
+.carousel__content .carousel__title {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 8px;
+}
+.carousel__content .carousel__date {
+  font-family: "Open Sans Regular", sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+.carousel__scrollbar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.carousel__scrollbar .carousel__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25%;
+  background-color: #007bff;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
 /*# sourceMappingURL=styles.css.map */

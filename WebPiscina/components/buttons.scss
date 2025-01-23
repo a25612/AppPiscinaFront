@@ -35,7 +35,7 @@
   }
 }
 
-// Calendar button styles (moving your existing styles here for completeness)
+
 .calendario-desplegable {
   position: relative;
 
@@ -55,8 +55,7 @@
     cursor: pointer;
     margin-left: 354px;
     z-index: 2001;
-    transition: right 1.2s ease-out; // Transición más lenta solo para el botón
-
+    transition: right 1.2s ease-out; 
     &:hover {
       background: $color-secundario;
 

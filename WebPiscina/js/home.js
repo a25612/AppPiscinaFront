@@ -1,7 +1,7 @@
 function abrirMenu() {
     const nav = document.querySelector('.header-nav');
     const barras = document.querySelectorAll('.bar');
-    
+
     nav.classList.toggle('active');
 
     if (nav.classList.contains('active')) {
@@ -72,3 +72,38 @@ function cerrarCalendarioFuera(event) {
         document.removeEventListener('click', cerrarCalendarioFuera);
     }
 }
+const container = document.querySelector('.carousel__container');
+const thumb = document.querySelector('.carousel__thumb');
+const scrollbar = document.querySelector('.carousel__scrollbar');
+
+// Sincronizar el movimiento del carrusel con la barra
+container.addEventListener('scroll', () => {
+    const scrollPercentage = container.scrollLeft / (container.scrollWidth - container.clientWidth);
+    thumb.style.transform = `translateX(${scrollPercentage * (scrollbar.clientWidth - thumb.clientWidth)}px)`;
+});
+
+// Arrastre del pulgar para mover el carrusel
+let isDragging = false;
+let startX;
+
+thumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    document.body.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    document.body.style.cursor = 'default';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    startX = e.clientX;
+
+    // Calcular desplazamiento proporcional
+    const scrollDelta =
+        (deltaX / scrollbar.clientWidth) * (container.scrollWidth - container.clientWidth);
+    container.scrollLeft += scrollDelta;
+});
