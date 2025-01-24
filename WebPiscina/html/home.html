@@ -27,7 +27,7 @@
         <nav class="popup-window">
           <ul>
             <li>
-              <button>
+              <button class="btn-open-modal">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
                   stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -40,10 +40,24 @@
           </ul>
         </nav>
       </label>
-
     </div>
-    
   </header>
+
+  <div class="modal-login">
+    <div class="div-login">
+      <button class="close-modal">×</button>
+      <form class="formulario-login">
+        <div class="formulario-data">
+          <input type="text" id="username" placeholder="USUARIO">
+        </div>
+        <div class="formulario-data">
+          <input type="password" id="password" placeholder="CONTRASEÑA">
+        </div>
+        <button type="submit" class="btn-iniciar-sesion">INICIAR SESIÓN →</button>
+      </form>
+    </div>
+  </div>
+
 
   <div class="calendario-desplegable">
     <!-- Your existing button -->
@@ -98,21 +112,21 @@
   <div class="carousel">
     <div class="carousel-container">
       <div class="carousel-card">
-        <img src="imagen1.jpg"  class="carousel-image">
+        <img src="" class="carousel-image">
         <div class="carousel-content">
           <h3 class="carousel-title">Curso 1</h3>
           <p class="carousel-date">23 de enero de 2025</p>
         </div>
       </div>
       <div class="carousel-card">
-        <img src="imagen2.jpg"  class="carousel-image">
+        <img src="" class="carousel-image">
         <div class="carousel-content">
           <h3 class="carousel-title">Curso 2</h3>
           <p class="carousel-date">15 de enero de 2025</p>
         </div>
       </div>
       <div class="carousel-card">
-        <img src="imagen3.jpg"  class="carousel-image">
+        <img src="" class="carousel-image">
         <div class="carousel-content">
           <h3 class="carousel-title">Curso 3</h3>
           <p class="carousel-date">12 de febrero de 2025</p>
@@ -120,26 +134,17 @@
       </div>
       <!-- Agrega más cartas si lo deseas -->
     </div>
-  
+
     <div class="carousel-scrollbar">
       <div class="carousel-thumb"></div>
     </div>
   </div>
-  
-  
-
- 
-
-
-
-
-
   <footer class="footer">
     <div class="footer-container">
       <p class="footer-texto">© 2024 Servicios ATEMTIA. Todos los derechos reservados.</p>
     </div>
   </footer>
-
+  <script src="../js/modal-login.js"></script>
   <script src="../js/home.js"></script>
 
 </body>

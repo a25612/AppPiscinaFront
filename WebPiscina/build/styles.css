@@ -78,31 +78,27 @@
   padding: 32px;
   text-align: center;
 }
-.div-login .logo img {
-  width: 150px;
-  height: auto;
-  margin-bottom: 20px;
-}
-.div-login .logo h1 {
+.div-login h1 {
   font-family: "Raleway", sans-serif;
   font-size: 24px;
   color: #62b635;
 }
-.div-login .formulario-login {
+
+.formulario-login {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.div-login .formulario-login .formulario-data {
+.formulario-login .formulario-data {
   text-align: left;
 }
-.div-login .formulario-login .formulario-data label {
+.formulario-login .formulario-data label {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   color: #62b635;
   margin-bottom: 5px;
 }
-.div-login .formulario-login .formulario-data input {
+.formulario-login .formulario-data input {
   width: 100%;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
@@ -113,15 +109,15 @@
   background: transparent;
   outline: none;
 }
-.div-login .formulario-login .registrarme {
+.formulario-login .registrarme {
   text-align: right;
 }
-.div-login .formulario-login .registrarme a {
+.formulario-login .registrarme a {
   font-size: 15px;
   color: #1498a9;
   text-decoration: none;
 }
-.div-login .formulario-login .btn-iniciar-sesion {
+.formulario-login .btn-iniciar-sesion {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   background-color: #62b635;
@@ -131,7 +127,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.div-login .formulario-login .btn-iniciar-sesion:hover {
+.formulario-login .btn-iniciar-sesion:hover {
   background-color: #4d8f29;
 }
 
@@ -536,7 +532,7 @@ main {
 }
 .calendario-desplegable .nav-calendario.active {
   right: 0;
-  margin-top: 104px;
+  margin-top: 105px;
 }
 .calendario-desplegable.active .btn-calendario {
   right: 54%;
@@ -544,6 +540,7 @@ main {
 
 .carousel {
   position: relative;
+  z-index: 1;
   overflow: hidden;
   padding: 16px;
   margin-left: 40px;
@@ -608,6 +605,50 @@ main {
   background-color: #007bff;
   border-radius: 4px;
   transition: transform 0.2s;
+}
+
+.modal-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-login.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-login .div-login {
+  background-color: #FFFFFF;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+.modal-login .close-modal {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1498a9;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.modal-login .close-modal:hover {
+  color: #0f6f7b;
 }
 
 /*# sourceMappingURL=styles.css.map */

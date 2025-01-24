@@ -1,0 +1,49 @@
+@import '../base/variables';
+
+.modal-login {
+  position: fixed; // Fijo en toda la pantalla
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // Fondo oscuro
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000; // Más alto que el del carrusel
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .div-login {
+    background-color: $color-fondo;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: $color-secundario; // Cambia por tu color
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($color-secundario, 10%);
+    }
+  }
+}
