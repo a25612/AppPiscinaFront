@@ -72,9 +72,9 @@ function cerrarCalendarioFuera(event) {
         document.removeEventListener('click', cerrarCalendarioFuera);
     }
 }
-const container = document.querySelector('.carousel__container');
-const thumb = document.querySelector('.carousel__thumb');
-const scrollbar = document.querySelector('.carousel__scrollbar');
+const container = document.querySelector('.carousel-container');
+const thumb = document.querySelector('.carousel-thumb');
+const scrollbar = document.querySelector('.carousel-scrollbar');
 
 // Sincronizar el movimiento del carrusel con la barra
 container.addEventListener('scroll', () => {

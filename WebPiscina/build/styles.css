@@ -550,7 +550,7 @@ main {
   margin-left: 40px;
   padding: 90px 10px 0;
 }
-.carousel__container {
+.carousel-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -558,10 +558,10 @@ main {
   padding-bottom: 16px;
   scroll-behavior: smooth;
 }
-.carousel__container::-webkit-scrollbar {
+.carousel-container::-webkit-scrollbar {
   display: none;
 }
-.carousel__card {
+.carousel-card {
   flex: 0 0 80%;
   scroll-snap-align: center;
   background-color: #fff;
@@ -571,26 +571,26 @@ main {
   display: flex;
   flex-direction: column;
 }
-.carousel__image {
+.carousel-image {
   width: 100%;
   height: 120px;
   object-fit: cover;
 }
-.carousel__content {
+.carousel-content {
   padding: 12px;
 }
-.carousel__content .carousel__title {
+.carousel-content .carousel-title {
   font-family: "Montserrat Bold", sans-serif;
   font-size: 16px;
   color: #333;
   margin: 0 0 8px;
 }
-.carousel__content .carousel__date {
+.carousel-content .carousel-date {
   font-family: "Open Sans Regular", sans-serif;
   font-size: 14px;
   color: #666;
 }
-.carousel__scrollbar {
+.carousel-scrollbar {
   position: relative;
   width: 100%;
   height: 8px;
@@ -600,7 +600,7 @@ main {
   overflow: hidden;
   cursor: pointer;
 }
-.carousel__scrollbar .carousel__thumb {
+.carousel-scrollbar .carousel-thumb {
   position: absolute;
   top: 0;
   left: 0;

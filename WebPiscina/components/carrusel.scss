@@ -7,7 +7,7 @@
     margin-left: 40px;
     padding: 90px 10px 0;
   
-    &__container {
+    &-container {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -20,7 +20,7 @@
       }
     }
   
-    &__card {
+    &-card {
       flex: 0 0 80%; // Ocupa el 80% del ancho en móvil
       scroll-snap-align: center;
       background-color: #fff;
@@ -31,30 +31,30 @@
       flex-direction: column;
     }
   
-    &__image {
+    &-image {
       width: 100%;
       height: 120px;
       object-fit: cover;
     }
   
-    &__content {
+    &-content {
       padding: 12px;
   
-      .carousel__title {
+      .carousel-title {
         font-family: 'Montserrat Bold', sans-serif;
         font-size: 16px;
         color: #333;
         margin: 0 0 8px;
       }
   
-      .carousel__date {
+      .carousel-date {
         font-family: 'Open Sans Regular', sans-serif;
         font-size: 14px;
         color: #666;
       }
     }
   
-    &__scrollbar {
+    &-scrollbar {
       position: relative;
       width: 100%;
       height: 8px;
@@ -64,7 +64,7 @@
       overflow: hidden;
       cursor: pointer;
   
-      .carousel__thumb {
+      .carousel-thumb {
         position: absolute;
         top: 0;
         left: 0;
