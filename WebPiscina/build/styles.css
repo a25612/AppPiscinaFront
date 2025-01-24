@@ -280,7 +280,6 @@ main {
   color: #FFFFFF;
   font-family: "Raleway", sans-serif;
   padding: 24px 32px;
-  width: 100%;
   text-align: center;
   margin-top: auto;
 }
@@ -452,11 +451,11 @@ main {
   height: 40px;
   width: 50px;
   border: none;
-  margin-top: 9px;
+  margin-top: 16px;
   background: #62b635;
   border-radius: 20px;
   cursor: pointer;
-  margin-left: 354px;
+  margin-left: 345px;
   z-index: 2001;
   transition: right 1.2s ease-out;
 }
