@@ -76,20 +76,14 @@
       <div class="nav-calendario-header">
         <h2>Mi agenda</h2>
         <div class="nav-controls">
-          <button>‹</button>
-          <span>Miércoles, 22 de enero</span>
-          <button>›</button>
+          <button onclick="cambiarDia(-1)">‹</button>
+          <span id="fecha-actual"></span>
+          <button onclick="cambiarDia(1)">›</button>
         </div>
       </div>
-
-      <div class="nav-calendario-content">
-        <div class="agenda-item">
-          <div class="time">15:55</div>
-          <div class="details">
-            <div class="title">Desarrollo web</div>
-            <div class="location">2SWD - S1 (Ordenadores)</div>
-          </div>
-        </div>
+      
+      <div class="nav-calendario-content" id="contenido-agenda">
+        <!-- Las actividades se llenarán dinámicamente aquí -->
       </div>
     </nav>
   </div>
@@ -132,13 +126,21 @@
           <p class="carousel-date">12 de febrero de 2025</p>
         </div>
       </div>
-      <!-- Agrega más cartas si lo deseas -->
     </div>
 
     <div class="carousel-scrollbar">
       <div class="carousel-thumb"></div>
     </div>
   </div>
+
+  <div class="separador">
+    <span class="bar-separador"></span>
+  </div>
+
+  <div class="div-actividades">
+    <h2>Mis Actividades</h2>
+  </div>
+
   <footer class="footer">
     <div class="footer-container">
       <p class="footer-texto">© 2024 Servicios ATEMTIA. Todos los derechos reservados.</p>
