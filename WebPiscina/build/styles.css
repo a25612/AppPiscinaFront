@@ -192,8 +192,15 @@ main {
   position: relative;
 }
 .header-titulo {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
+}
+.header-titulo a {
+  text-decoration: none;
+  color: inherit;
+}
+.header-titulo a:hover {
+  opacity: 0.8;
 }
 .header-desplegable {
   display: none;

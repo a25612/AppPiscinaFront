@@ -9,17 +9,24 @@
     z-index: 2000;
 
     &-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
     }
 
     &-titulo {
-      font-size: 1.8rem;
-      font-weight: bold;
+        font-size: 1.7rem;
+        font-weight: bold;
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                opacity: 0.8; 
+            }
+        }
     }
 
     &-desplegable { 
