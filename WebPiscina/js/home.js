@@ -1,50 +1,47 @@
-function abrirMenu() {
-    const nav = document.querySelector('.header-nav');
-    const barras = document.querySelectorAll('.bar');
 
-    nav.classList.toggle('active');
-
-    if (nav.classList.contains('active')) {
-        barras[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        barras[1].style.opacity = '0';
-        barras[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
-        barras[0].style.transform = 'none';
-        barras[1].style.opacity = '1';
-        barras[2].style.transform = 'none';
-    }
-}
-
+// ABRIR MENU 
 function abrirMenuIzquierda() {
     const contenedor = document.querySelector('.desplegable-izquierda');
     const nav = document.querySelector('.nav-izquierda');
+    const barras = document.querySelectorAll('.bar-izquierda');
 
     contenedor.classList.toggle('active');
     nav.classList.toggle('active');
 
-    // Si el menú está activo, añade listener para cerrar al hacer clic fuera
-    if (nav.classList.contains('active')) {
+    if (contenedor.classList.contains('active')) {
+        barras[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        barras[1].style.opacity = '0';
+        barras[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+
         document.addEventListener('click', cerrarMenuFuera);
     } else {
+        barras[0].style.transform = 'rotate(0) translate(0, 0)';
+        barras[1].style.opacity = '1';
+        barras[2].style.transform = 'rotate(0) translate(0, 0)';
+
         document.removeEventListener('click', cerrarMenuFuera);
     }
 }
 
+// CERRAR MENU CLICANDO FUERA DE EL
 function cerrarMenuFuera(event) {
     const contenedor = document.querySelector('.desplegable-izquierda');
     const nav = document.querySelector('.nav-izquierda');
+    const barras = document.querySelectorAll('.bar-izquierda');
 
-    // Verifica si el clic ocurrió fuera del menú y del botón
     if (!nav.contains(event.target) && !contenedor.contains(event.target)) {
         contenedor.classList.remove('active');
         nav.classList.remove('active');
 
-        // Remueve el listener
+        barras[0].style.transform = 'rotate(0) translate(0, 0)';
+        barras[1].style.opacity = '1';
+        barras[2].style.transform = 'rotate(0) translate(0, 0)';
+
         document.removeEventListener('click', cerrarMenuFuera);
     }
 }
-
-
+ 
+// ABRIR CALENDARIO
 function abrirCalendario() {
     const contenedor = document.querySelector('.calendario-desplegable');
     const nav = document.querySelector('.nav-calendario');
@@ -52,7 +49,7 @@ function abrirCalendario() {
     contenedor.classList.toggle('active');
     nav.classList.toggle('active');
 
-    // Si el calendario está activo, añade listener para cerrar al hacer clic fuera
+    // Añade listener para cerrar al hacer clic fuera
     if (nav.classList.contains('active')) {
         document.addEventListener('click', cerrarCalendarioFuera);
     } else {
@@ -60,6 +57,7 @@ function abrirCalendario() {
     }
 }
 
+// CERRAR CALENDARIO CLICANDO FUERA DE EL
 function cerrarCalendarioFuera(event) {
     const contenedor = document.querySelector('.calendario-desplegable');
     const nav = document.querySelector('.nav-calendario');
@@ -72,6 +70,24 @@ function cerrarCalendarioFuera(event) {
         document.removeEventListener('click', cerrarCalendarioFuera);
     }
 }
+
+// Función para cerrar automáticamente el boton iniciar sesion si se abre otro menu
+document.addEventListener('click', function (event) {
+    const popup = document.querySelector('.popup input');
+    const calendario = document.querySelector('.calendario-desplegable');
+    const navCalendario = document.querySelector('.nav-calendario');
+  
+    if (!event.target.closest('.popup') && popup.checked) {
+      popup.checked = false;
+    }
+  
+    if (!event.target.closest('.calendario-desplegable') && calendario.classList.contains('active')) {
+      calendario.classList.remove('active');
+      navCalendario.classList.remove('active');
+    }
+});
+
+// CARRUSEL
 const container = document.querySelector('.carousel-container');
 const thumb = document.querySelector('.carousel-thumb');
 const scrollbar = document.querySelector('.carousel-scrollbar');
@@ -108,8 +124,8 @@ document.addEventListener('mousemove', (e) => {
     container.scrollLeft += scrollDelta;
 });
 
-// Configuración inicial
-let fechaActual = new Date(); // Fecha inicial: hoy
+let fechaActual = new Date(); // Fecha inicial al abrirlo (hoy)
+// Ejemplos de actividades
 const actividades = {
     "2025-01-22": [
         { hora: "15:55", titulo: "Desarrollo web", ubicacion: "2SWD - S1 (Ordenadores)" },

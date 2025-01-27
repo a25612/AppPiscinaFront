@@ -6,13 +6,13 @@
   .nav-izquierda {
     position: fixed;
     top: 0;
-    left: -33%;
+    left: -35%; 
     width: 25%;
     height: 100%;
-    margin-top: 105px;
+    margin-top: 100px;
     background: $color-principal;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
-    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1); // Misma duración y suavidad que el botón
+    box-shadow: 2px 0 8px $color-secundario;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@
           transition: color 0.3s ease;
 
           &:hover {
-            color: #c1c4c6;
+            color: #c1c4c6; 
           }
         }
       }
@@ -41,16 +41,33 @@
 
     &.active {
       left: 0;
-      margin-top: 104px;
+      margin-top: 100px;
     }
   }
 
   &.active {
     .btn-menudesplegable {
-      left: 31%; // Se mueve junto con el menú
+      left: 31%;
+    }
+  }
+
+  .btn-menudesplegable {
+    .bar-izquierda {
+      &.active {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(4px, 4px); 
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(4px, -4px); 
+        }
+      }
     }
   }
 }
+
 
 .separador{
   display: flex; 

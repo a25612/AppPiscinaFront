@@ -1,177 +1,117 @@
 @import '../base/variables';
 
-$burger-line-width: 1.125em;
-$burger-line-height: 0.125em;
-$burger-offset: 0.625em;
-$burger-color: #333;
-$burger-line-border-radius: 0.1875em;
-$burger-diameter: 3.125em;
-$burger-btn-border-radius: 1.562em;
-$burger-line-transition: 0.3s;
-$burger-transition: all 0.1s ease-in-out;
-$burger-hover-scale: 1.1;
-$burger-active-scale: 0.95;
-$burger-enable-outline-color: #1498a9;
-;
-$burger-enable-outline-width: 0.125em;
-$burger-enable-outline-offset: $burger-enable-outline-width;
-
-$nav-padding-x: 0.25em;
-$nav-padding-y: 0.625em;
-$nav-border-radius: 0.375em;
-$nav-border-color: #ccc;
-$nav-border-width: 0.0625em;
-$nav-shadow-color: rgba(0, 0, 0, 0.2);
-$nav-shadow-width: 0 1px 5px;
-$nav-bg: #eee;
-$nav-font-family: "Poppins", sans-serif;
-$nav-default-scale: 0.8;
-$nav-active-scale: 1;
-$nav-position-left: 0;
-$nav-position-right: unset;
-
-$nav-title-size: 0.625em;
-$nav-title-color: #777;
-$nav-title-padding-x: 1rem;
-$nav-title-padding-y: 0.25em;
-
-$nav-button-padding-x: 1rem;
-$nav-button-padding-y: 0.375em;
-$nav-button-border-radius: 0.375em;
-$nav-button-font-size: 17px;
-$nav-button-hover-bg: #d2d5d8;
-$nav-button-hover-text-color: #fff;
-$nav-button-distance: 0.875em;
-
-$underline-border-width: 0.0625em;
-$underline-border-color: #ccc;
-$underline-margin-y: 0.3125em;
-
-// Estilos principales
 .popup {
     display: inline-block;
     text-rendering: optimizeLegibility;
     position: relative;
-
+  
     input {
-        display: none;
+      display: none;
     }
-
+  
     .burger {
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        background: $color-secundario;
-        width: $burger-diameter;
-        height: $burger-diameter;
-        border-radius: $burger-btn-border-radius;
-        margin-right: 40px;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        transition: $burger-transition;
-        outline: $burger-enable-outline-width solid transparent;
-        outline-offset: 0;
-
-        &:hover {
-            transform: scale($burger-hover-scale);
-        }
-
-        &:active {
-            transform: scale($burger-active-scale);
-        }
-
-        &:focus:not(:hover) {
-            outline-color: $burger-enable-outline-color;
-            outline-offset: $burger-enable-outline-offset;
-        }
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      background: $color-secundario;
+      width: 3.125em;
+      height: 3.125em;
+      border-radius: 1.562em;
+      margin-right: 40px;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.1s ease-in-out;
+      outline: 0.125em solid transparent;
+      outline-offset: 0;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+  
+      &:active {
+        transform: scale(0.95);
+      }
+  
+      &:focus:not(:hover) {
+        outline-color: $color-secundario;
+        outline-offset: 0.125em;
+      }
     }
-
+  
     .popup-window {
-        transform: scale($nav-default-scale) translateX(-50%);
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        padding: $nav-padding-y $nav-padding-x;
-        background: $nav-bg;
-        font-family: $nav-font-family;
-        color: $burger-color;
-        border-radius: $nav-border-radius;
-        box-shadow: $nav-shadow-width $nav-shadow-color;
-        border: $nav-border-width solid $nav-border-color;
-        top: calc(100% + $burger-enable-outline-width + $burger-enable-outline-offset);
-        left: -75%;
-        transform-origin: top center;
-        transition: $burger-transition;
-        margin-top: 10px;
-
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-
-            button {
-                outline: none;
-                width: 100%;
-                border: none;
-                background: none;
-                display: flex;
-                align-items: center;
-                color: $burger-color;
-                font-size: $nav-button-font-size;
-                padding: $nav-button-padding-y $nav-button-padding-x;
-                white-space: nowrap;
-                border-radius: $nav-button-border-radius;
-                cursor: pointer;
-                column-gap: $nav-button-distance;
-
-                &:hover,
-                &:focus-visible {
-
-                    background: $nav-button-hover-bg;
-                }
-            }
-
-            li:nth-child(1) svg,
-            li:nth-child(2) svg {
-                color: $color-secundario;
-            }
-
-            li:nth-child(4) svg,
-            li:nth-child(5) svg {
-                color: rgb(153, 153, 153);
-            }
-
-            li:nth-child(7) svg {
-                color: red;
-            }
+      transform: scale(0.8) translateX(-50%);
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: calc(100% + 0.125em + 0.125em);
+      left: 19%; 
+      padding: 0.625em 0.25em;
+      margin-top: 10px;
+      background: #eee;
+      font-family: $font-content;
+      color: #333;
+      border-radius: 0.375em;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+      border: 0.0625em solid #ccc;
+      transform-origin: top center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 1000; 
+    }
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+  
+      button {
+        outline: none;
+        width: 100%;
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        color: #333;
+        font-size: 17px;
+        padding: 0.375em 1rem;
+        white-space: nowrap;
+        border-radius: 0.375em;
+        cursor: pointer;
+        column-gap: 0.875em;
+  
+        &:hover,
+        &:focus-visible {
+          background: #d2d5d8;
         }
-
-        hr {
-            margin: $underline-margin-y 0;
-            border: none;
-            border-bottom: $underline-border-width solid $underline-border-color;
-        }
+      }
     }
-
-    input:checked~.burger span:nth-child(1) {
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg);
+  
+    hr {
+      margin: 0.3125em 0;
+      border: none;
+      border-bottom: 0.0625em solid #ccc;
     }
-
-    input:checked~.burger span:nth-child(2) {
-        bottom: 50%;
-        transform: translateY(50%) rotate(-45deg);
+  
+    input:checked ~ .burger span:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
     }
-
-    input:checked~.burger span:nth-child(3) {
-        transform: translateX(calc($burger-diameter * -1 - $burger-line-width));
+  
+    input:checked ~ .burger span:nth-child(2) {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
     }
-
-    input:checked~.popup-window {
-        transform: scale($nav-active-scale);
-        visibility: visible;
-        opacity: 1;
+  
+    input:checked ~ .burger span:nth-child(3) {
+      transform: translateX(calc(-3.125em - 0.125em));
     }
-}
+  
+    input:checked ~ .popup-window {
+      transform: scale(1) translateX(-50%);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  

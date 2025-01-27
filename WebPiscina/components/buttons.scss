@@ -54,7 +54,7 @@
     border-radius: 20px;
     cursor: pointer;
     margin-left: 345px;
-    z-index: 2001;
+    z-index: 1;
     transition: right 1.2s ease-out; 
     &:hover {
       background: $color-secundario;
@@ -71,10 +71,10 @@
     right: -53%;
     width: 41%;
     height: 100%;
-    margin-top: 105px;
+    margin-top: 100px;
     background: white;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1); // Mantiene la velocidad original
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -149,7 +149,7 @@
 
     &.active {
       right: 0;
-      margin-top: 105px;
+      margin-top: 100px;
     }
   }
 
@@ -172,13 +172,25 @@
   margin-top: 90px;
   cursor: pointer;
   padding: 1rem;
-  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1); // Transición más suave
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   .bar-izquierda {
     display: block;
     width: 25px;
     height: 3px;
     background: $color-principal;
-    transition: all 0.3s ease;
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease;
+
+    &:nth-child(1) {
+      transform-origin: top left;
+    }
+    &:nth-child(2) {
+      transform-origin: center;
+    }
+    &:nth-child(3) {
+      transform-origin: bottom left;
+    }
   }
 }

@@ -4,12 +4,12 @@
 .desplegable-izquierda .nav-izquierda {
   position: fixed;
   top: 0;
-  left: -33%;
+  left: -35%;
   width: 25%;
   height: 100%;
-  margin-top: 105px;
+  margin-top: 100px;
   background: #62b635;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 8px #1498a9;
   transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2000;
   display: flex;
@@ -35,10 +35,19 @@
 }
 .desplegable-izquierda .nav-izquierda.active {
   left: 0;
-  margin-top: 104px;
+  margin-top: 100px;
 }
 .desplegable-izquierda.active .btn-menudesplegable {
   left: 31%;
+}
+.desplegable-izquierda .btn-menudesplegable .bar-izquierda.active:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.desplegable-izquierda .btn-menudesplegable .bar-izquierda.active:nth-child(2) {
+  opacity: 0;
+}
+.desplegable-izquierda .btn-menudesplegable .bar-izquierda.active:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 
 .separador {
@@ -334,25 +343,26 @@ main {
   visibility: hidden;
   opacity: 0;
   position: absolute;
+  top: calc(100% + 0.125em + 0.125em);
+  left: 19%;
   padding: 0.625em 0.25em;
+  margin-top: 10px;
   background: #eee;
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #333;
   border-radius: 0.375em;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   border: 0.0625em solid #ccc;
-  top: calc(100% + 0.125em + 0.125em);
-  left: -75%;
   transform-origin: top center;
-  transition: all 0.1s ease-in-out;
-  margin-top: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
 }
-.popup .popup-window ul {
+.popup ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-.popup .popup-window ul button {
+.popup ul button {
   outline: none;
   width: 100%;
   border: none;
@@ -367,21 +377,10 @@ main {
   cursor: pointer;
   column-gap: 0.875em;
 }
-.popup .popup-window ul button:hover, .popup .popup-window ul button:focus-visible {
+.popup ul button:hover, .popup ul button:focus-visible {
   background: #d2d5d8;
 }
-.popup .popup-window ul li:nth-child(1) svg,
-.popup .popup-window ul li:nth-child(2) svg {
-  color: #1498a9;
-}
-.popup .popup-window ul li:nth-child(4) svg,
-.popup .popup-window ul li:nth-child(5) svg {
-  color: rgb(153, 153, 153);
-}
-.popup .popup-window ul li:nth-child(7) svg {
-  color: red;
-}
-.popup .popup-window hr {
+.popup hr {
   margin: 0.3125em 0;
   border: none;
   border-bottom: 0.0625em solid #ccc;
@@ -395,10 +394,10 @@ main {
   transform: translateY(50%) rotate(-45deg);
 }
 .popup input:checked ~ .burger span:nth-child(3) {
-  transform: translateX(-4.25em);
+  transform: translateX(-3.25em);
 }
 .popup input:checked ~ .popup-window {
-  transform: scale(1);
+  transform: scale(1) translateX(-50%);
   visibility: visible;
   opacity: 1;
 }
@@ -452,7 +451,7 @@ main {
   border-radius: 20px;
   cursor: pointer;
   margin-left: 345px;
-  z-index: 2001;
+  z-index: 1;
   transition: right 1.2s ease-out;
 }
 .calendario-desplegable .btn-calendario:hover {
@@ -467,7 +466,7 @@ main {
   right: -53%;
   width: 41%;
   height: 100%;
-  margin-top: 105px;
+  margin-top: 100px;
   background: white;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -532,7 +531,7 @@ main {
 }
 .calendario-desplegable .nav-calendario.active {
   right: 0;
-  margin-top: 105px;
+  margin-top: 100px;
 }
 .calendario-desplegable.active .btn-calendario {
   right: 54%;
@@ -557,7 +556,17 @@ main {
   width: 25px;
   height: 3px;
   background: #62b635;
-  transition: all 0.3s ease;
+  border-radius: 2px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+.btn-menudesplegable .bar-izquierda:nth-child(1) {
+  transform-origin: top left;
+}
+.btn-menudesplegable .bar-izquierda:nth-child(2) {
+  transform-origin: center;
+}
+.btn-menudesplegable .bar-izquierda:nth-child(3) {
+  transform-origin: bottom left;
 }
 
 .carousel {
