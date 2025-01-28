@@ -50,12 +50,29 @@
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
+.titulo-anuncios {
+  margin-top: 60px;
+}
+
 .separador {
   display: flex;
   justify-content: center;
 }
 .separador .bar-separador {
   margin-top: 20px;
+  display: block;
+  width: 350px;
+  height: 1px;
+  background: rgba(84, 190, 84, 0.441);
+}
+
+.separador-abajo {
+  display: flex;
+  justify-content: center;
+}
+.separador-abajo .bar-separador {
+  margin-top: -19px;
+  margin-bottom: 25px;
   display: block;
   width: 350px;
   height: 1px;
@@ -308,7 +325,7 @@ main {
   background-color: #7ac8e3;
   color: #FFFFFF;
   font-family: "Raleway", sans-serif;
-  padding: 16px;
+  padding: 17px;
   text-align: center;
   margin-top: auto;
 }
@@ -613,6 +630,7 @@ main {
 }
 
 .carousel {
+  margin-top: -95px;
   position: relative;
   z-index: 1;
   overflow: hidden;

@@ -70,6 +70,9 @@
   }
 }
 
+.titulo-anuncios{
+  margin-top: 60px;
+}
 
 .separador {
   display: flex;
@@ -77,6 +80,20 @@
 
   .bar-separador {
     margin-top: 20px;
+    display: block;
+    width: 350px;
+    height: 1px;
+    background: rgba(84, 190, 84, 0.441);
+  }
+}
+
+.separador-abajo {
+  display: flex;
+  justify-content: center;
+
+  .bar-separador {
+    margin-top: -19px;
+    margin-bottom: 25px;
     display: block;
     width: 350px;
     height: 1px;

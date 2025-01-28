@@ -219,13 +219,13 @@ function actualizarCalendario() {
         agenda.forEach((actividad) => {
             const item = document.createElement("div");
             item.className = "agenda-item";
-            item.innerHTML = `
+            item.innerHTML =  `
           <div class="time">${actividad.hora}</div>
           <div class="details">
             <div class="title">${actividad.titulo}</div>
             <div class="location">${actividad.ubicacion}</div>
           </div>
-        `;
+         `;
             contenidoAgenda.appendChild(item);
         });
     }
@@ -237,3 +237,25 @@ if (!esLaborable(fechaActual)) {
 } else {
     actualizarCalendario();
 }
+
+// Funcion para que los botones de los desplegables se queden en su sitio
+let lastScrollTop = 0;
+const btnCalendario = document.querySelector('.btn-calendario');
+const btnMenu = document.querySelector('.btn-menudesplegable');
+window.addEventListener('scroll', function() {
+    let currentScroll = window.scrollY;
+    
+    if (currentScroll > lastScrollTop) {
+        btnCalendario.style.opacity = '0';
+        btnCalendario.style.pointerEvents = 'none';
+        btnMenu.style.opacity = '0';
+        btnMenu.style.pointerEvents = 'none';
+    } else {
+        btnCalendario.style.opacity = '1';
+        btnCalendario.style.pointerEvents = 'auto';
+        btnMenu.style.opacity = '1';
+        btnMenu.style.pointerEvents = 'auto';
+    }
+    
+    lastScrollTop = currentScroll;
+});
