@@ -9,7 +9,7 @@
   height: 100%;
   margin-top: 100px;
   background: #62b635;
-  box-shadow: 2px 0 8px #1498a9;
+  box-shadow: 2px 0 8px #7ac8e3;
   transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2000;
   display: flex;
@@ -62,10 +62,65 @@
   background: rgba(84, 190, 84, 0.441);
 }
 
-.div-actividades h2 {
+.div-mi-espacio h2 {
+  margin-bottom: 40px;
   margin-left: 40px;
   color: #62b635;
-  font-size: 20px;
+  font-size: 22px;
+}
+.div-mi-espacio .mi-espacio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.div-mi-espacio .espacio-item {
+  position: relative;
+  padding: 1rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.div-mi-espacio .espacio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.25);
+}
+.div-mi-espacio .espacio-item.mensajes, .div-mi-espacio .espacio-item.reservas, .div-mi-espacio .espacio-item.incidencias, .div-mi-espacio .espacio-item.mi-cuenta {
+  background: linear-gradient(135deg, #62b635 20%, #7ac8e3 80%);
+}
+.div-mi-espacio .espacio-item .icono {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.div-mi-espacio .espacio-item p {
+  margin-top: -1.45rem;
+  font-size: 0.9rem;
+}
+.div-mi-espacio .espacio-item .notificacion {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #1498a9;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 50%;
 }
 
 @keyframes slope {
@@ -131,37 +186,6 @@
 }
 .formulario-login .btn-iniciar-sesion:hover {
   background-color: #4d8f29;
-}
-
-.formulario-registro {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.formulario-registro label {
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #62b635;
-  margin-bottom: 5px;
-}
-.formulario-registro input {
-  width: 100%;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  color: black;
-  padding: 8px;
-  border: none;
-  border-bottom: 1px solid #1498a9;
-  background: transparent;
-  outline: none;
-}
-.formulario-registro .iniciar-sesion {
-  text-align: right;
-}
-.formulario-registro .iniciar-sesion a {
-  font-size: 15px;
-  color: #1498a9;
-  text-decoration: none;
 }
 
 body {
@@ -281,26 +305,35 @@ main {
   }
 }
 .footer {
-  background-color: #1498a9;
+  background-color: #7ac8e3;
   color: #FFFFFF;
   font-family: "Raleway", sans-serif;
-  padding: 24px 32px;
+  padding: 16px;
   text-align: center;
   margin-top: auto;
 }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 12px;
+}
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer {
-    padding: 16px;
+    padding: 24px 32px;
   }
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .footer-text {
-    margin-bottom: 1rem;
-    font-size: 12px;
+    font-size: 14px;
+    margin-bottom: 0;
   }
 }
 .popup {
@@ -450,15 +483,20 @@ main {
   background: #62b635;
   border-radius: 20px;
   cursor: pointer;
-  margin-left: 345px;
-  z-index: 1;
-  transition: right 1.2s ease-out;
+  right: 3%;
+  z-index: 1001;
+  transition: right 0.5s ease-out;
 }
 .calendario-desplegable .btn-calendario:hover {
   background: #1498a9;
 }
 .calendario-desplegable .btn-calendario:hover .svg-icon {
   animation: slope 1s linear infinite;
+}
+.calendario-desplegable .btn-calendario.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .calendario-desplegable .nav-calendario {
   position: fixed;
@@ -469,7 +507,7 @@ main {
   margin-top: 100px;
   background: white;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-  transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: right 0.5s ease-out;
   z-index: 2000;
   display: flex;
   flex-direction: column;
@@ -534,7 +572,7 @@ main {
   margin-top: 100px;
 }
 .calendario-desplegable.active .btn-calendario {
-  right: 54%;
+  right: 55%;
 }
 
 .btn-menudesplegable {
@@ -550,6 +588,11 @@ main {
   cursor: pointer;
   padding: 1rem;
   transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-menudesplegable.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .btn-menudesplegable .bar-izquierda {
   display: block;
@@ -633,7 +676,7 @@ main {
   left: 0;
   height: 100%;
   width: 25%;
-  background-color: #007bff;
+  background-color: #0096cc;
   border-radius: 4px;
   transition: transform 0.2s;
 }

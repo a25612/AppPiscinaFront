@@ -6,13 +6,13 @@
   .nav-izquierda {
     position: fixed;
     top: 0;
-    left: -35%; 
+    left: -35%;
     width: 25%;
     height: 100%;
     margin-top: 100px;
     background: $color-principal;
-    box-shadow: 2px 0 8px $color-secundario;
-    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+    box-shadow: 2px 0 8px $color-terciario;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@
           transition: color 0.3s ease;
 
           &:hover {
-            color: #c1c4c6; 
+            color: #c1c4c6;
           }
         }
       }
@@ -55,13 +55,15 @@
     .bar-izquierda {
       &.active {
         &:nth-child(1) {
-          transform: rotate(45deg) translate(4px, 4px); 
+          transform: rotate(45deg) translate(4px, 4px);
         }
+
         &:nth-child(2) {
           opacity: 0;
         }
+
         &:nth-child(3) {
-          transform: rotate(-45deg) translate(4px, -4px); 
+          transform: rotate(-45deg) translate(4px, -4px);
         }
       }
     }
@@ -69,23 +71,89 @@
 }
 
 
-.separador{
-  display: flex; 
+.separador {
+  display: flex;
   justify-content: center;
- .bar-separador{
-  margin-top: 20px;
-  display: block;
-  width: 350px;
-  height: 1px;
-  background: rgba(84, 190, 84, 0.441);
+
+  .bar-separador {
+    margin-top: 20px;
+    display: block;
+    width: 350px;
+    height: 1px;
+    background: rgba(84, 190, 84, 0.441);
   }
 }
 
-.div-actividades{
-  h2{
+.div-mi-espacio {
+  h2 {
+    margin-bottom: 40px;
     margin-left: 40px;
     color: $color-principal;
-    font-size: 20px;
+    font-size: 22px;
+  }
+
+  .mi-espacio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1.5rem; // Espaciado uniforme
+    justify-content: center;
+    align-items: center;
+    max-width: 350px; // Ajuste para centrar mejor
+    margin: 0 auto;
+  }
+
+  .espacio-item {
+    position: relative;
+    padding: 1rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: $font-content;
+    font-weight: 600;
+    color: $color-fondo;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    &.mensajes,
+    &.reservas,
+    &.incidencias,
+    &.mi-cuenta {
+      background: linear-gradient(135deg, $color-principal 20%, $color-terciario 80%);
+    }
+
+    .icono {
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    p {
+      margin-top: -1.45rem;
+      font-size: 0.9rem;
+    }
+
+    .notificacion {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      background: $color-secundario;
+      color: $color-fondo;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 5px 8px;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -102,4 +170,3 @@
 
   100% {}
 }
-

@@ -35,7 +35,7 @@
   }
 }
 
-
+// Botón de calendario
 .calendario-desplegable {
   position: relative;
 
@@ -53,15 +53,22 @@
     background: $color-principal;
     border-radius: 20px;
     cursor: pointer;
-    margin-left: 345px;
-    z-index: 1;
-    transition: right 1.2s ease-out; 
+    right: 3%;
+    z-index: 1001;
+    transition: right 0.5s ease-out;
+
     &:hover {
       background: $color-secundario;
 
       .svg-icon {
         animation: slope 1s linear infinite;
       }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   }
 
@@ -74,7 +81,7 @@
     margin-top: 100px;
     background: white;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: right 0.5s ease-out;
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -96,7 +103,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
+
         button {
           background: none;
           border: none;
@@ -104,7 +111,7 @@
           cursor: pointer;
           font-size: 1.5rem;
           padding: 0.5rem;
-          
+
           &:hover {
             color: $color-principal;
           }
@@ -121,24 +128,24 @@
       .agenda-item {
         display: flex;
         margin-bottom: 1.5rem;
-        
+
         .time {
           min-width: 60px;
           color: #333;
           font-weight: bold;
         }
-        
+
         .details {
           margin-left: 1rem;
           padding-left: 1rem;
           border-left: 2px solid $color-secundario;
-          
+
           .title {
             color: #333;
             margin-bottom: 0.25rem;
             font-weight: 500;
           }
-          
+
           .location {
             color: #666;
             font-size: 0.9rem;
@@ -155,11 +162,13 @@
 
   &.active {
     .btn-calendario {
-      right: 54%;
+      right: 55%;
     }
   }
 }
 
+
+// Botón de menu desplegable
 .btn-menudesplegable {
   position: fixed;
   top: 1rem;
@@ -174,21 +183,29 @@
   padding: 1rem;
   transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   .bar-izquierda {
     display: block;
     width: 25px;
     height: 3px;
     background: $color-principal;
     border-radius: 2px;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
 
     &:nth-child(1) {
       transform-origin: top left;
     }
+
     &:nth-child(2) {
       transform-origin: center;
     }
+
     &:nth-child(3) {
       transform-origin: bottom left;
     }

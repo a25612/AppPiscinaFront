@@ -1,31 +1,38 @@
 @import '../base/variables';
 
 .footer {
-  background-color: $color-secundario;
+  background-color: $color-terciario;
   color: #FFFFFF;
   font-family: $font-content;
-  padding: 24px 32px;
-
+  padding: 16px; // Tamaño base para móviles
   text-align: center;
   margin-top: auto;
-}
 
-@media (max-width: 768px) {
-  .footer {
-    padding: 16px;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    &-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    &-text {
-      margin-bottom: 1rem;
-      font-size: 12px;
-    }
+  &-text {
+    margin-bottom: 1rem;
+    font-size: 12px;
   }
 }
 
+@media (min-width: 768px) {
+  .footer {
+    padding: 24px 32px;
 
-  
+    &-container {
+      flex-direction: row; 
+      justify-content: space-between;
+    }
+
+    &-text {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+}
