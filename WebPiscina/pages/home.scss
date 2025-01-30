@@ -145,7 +145,7 @@
     &.reservas,
     &.incidencias,
     &.mi-cuenta {
-      background: linear-gradient(135deg, $color-principal 20%, $color-terciario 80%);
+      background: linear-gradient(135deg, $color-principal 20%, $color-secundario 80%);
     }
 
     .icono {
@@ -157,7 +157,7 @@
 
     p {
       margin-top: -1.45rem;
-      font-size: 0.9rem;
+      font-size: 15px;
     }
 
     .notificacion {

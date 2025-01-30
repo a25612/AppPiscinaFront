@@ -116,7 +116,7 @@
   box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.25);
 }
 .div-mi-espacio .espacio-item.mensajes, .div-mi-espacio .espacio-item.reservas, .div-mi-espacio .espacio-item.incidencias, .div-mi-espacio .espacio-item.mi-cuenta {
-  background: linear-gradient(135deg, #62b635 20%, #7ac8e3 80%);
+  background: linear-gradient(135deg, #62b635 20%, #1498a9 80%);
 }
 .div-mi-espacio .espacio-item .icono {
   width: 40px;
@@ -126,7 +126,7 @@
 }
 .div-mi-espacio .espacio-item p {
   margin-top: -1.45rem;
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 .div-mi-espacio .espacio-item .notificacion {
   position: absolute;
@@ -322,7 +322,7 @@ main {
   }
 }
 .footer {
-  background-color: #7ac8e3;
+  background-color: #1498a9;
   color: #FFFFFF;
   font-family: "Raleway", sans-serif;
   padding: 17px;

@@ -242,20 +242,23 @@ if (!esLaborable(fechaActual)) {
 let lastScrollTop = 0;
 const btnCalendario = document.querySelector('.btn-calendario');
 const btnMenu = document.querySelector('.btn-menudesplegable');
+
 window.addEventListener('scroll', function() {
     let currentScroll = window.scrollY;
-    
+
     if (currentScroll > lastScrollTop) {
+        // Ocultar los botones cuando el usuario baja
         btnCalendario.style.opacity = '0';
         btnCalendario.style.pointerEvents = 'none';
         btnMenu.style.opacity = '0';
         btnMenu.style.pointerEvents = 'none';
-    } else {
+    } else if (currentScroll === 0) {
+        // Mostrar los botones solo cuando el usuario llega arriba del todo
         btnCalendario.style.opacity = '1';
         btnCalendario.style.pointerEvents = 'auto';
         btnMenu.style.opacity = '1';
         btnMenu.style.pointerEvents = 'auto';
     }
-    
+
     lastScrollTop = currentScroll;
 });
