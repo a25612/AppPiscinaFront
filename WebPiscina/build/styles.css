@@ -30,6 +30,9 @@
   font-size: 1rem;
   transition: color 0.3s ease;
 }
+.desplegable-izquierda .nav-izquierda-menu li .menu-izquierda-link i {
+  margin-right: 9px;
+}
 .desplegable-izquierda .nav-izquierda-menu li .menu-izquierda-link:hover {
   color: #c1c4c6;
 }
@@ -397,7 +400,7 @@ main {
   opacity: 0;
   position: absolute;
   top: calc(100% + 0.125em + 0.125em);
-  left: 27%;
+  left: 18%;
   padding: 0.625em 0.25em;
   margin-top: 12px;
   background: #eee;
