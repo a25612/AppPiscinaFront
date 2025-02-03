@@ -1,116 +1,121 @@
-  @import "../base/variables";
+@import "../base/variables";
 
-  .header {
-    background-color: $color-principal;
-    color: #fff;
-    font-family: $font-title;
-    padding: 1rem;
+.header {
+  background-color: $color-fondo;
+  color: #fff;
+  font-family: $font-title;
+  padding: 22px;
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  border-bottom: 2px solid $color-terciario;
+
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
-    z-index: 2000;
-
-    &-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    &-titulo {
-        font-size: 1.7rem;
-        font-weight: bold;
-        a {
-            text-decoration: none;
-            color: inherit;
-            &:hover {
-                opacity: 0.8; 
-            }
-        }
-    }
-
-    &-desplegable { 
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 2001;
-
-      .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background: #fff;
-        transition: all 0.3s ease;
-      }
-    }
-
-    &-nav {
-      &-menu {
-        list-style: none;
-        display: flex;
-        gap: 24px;
-        margin: 0;
-        padding: 0;
-
-        li {
-          .header-link {
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            transition: color 0.3s ease;
-
-            &:hover {
-              color: $color-secundario;
-            }
-          }
-        }
-      }
-    }
   }
 
-  // Media Query para móviles
-  @media (max-width: 768px) {
-    .header-desplegable {
+  &-logo {
+    a {
       display: flex;
+      align-items: center;
     }
 
-    .header-nav {
-      display: none;
-      position: absolute;
-      top: 100%; // Se posiciona justo debajo del header
-      left: 0;
-      width: 100%;
-      background: $color-principal;
-      z-index: 1999;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      
-      &.active {
-        display: block;
-        padding: 1rem 0;
-      }
+    .logo-atemtia {
+      height: 55px; 
+      width: auto;
+    }
+  }
 
-      &-menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        
-        li {
-          width: 100%;
-          text-align: center;
-          
-          .header-link {
-            display: block;
-            padding: 0.75rem 0;
-            font-size: 1.1rem;
-            
-            &:hover {
-              background-color: rgba(255,255,255,0.1);
-            }
+  &-desplegable { 
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &-nav {
+    &-menu {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+
+      li {
+        .header-link {
+          text-decoration: none;
+          color: #fff;
+          font-size: 16px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $color-secundario;
           }
         }
       }
     }
   }
+}
+
+// Media Query para móviles
+@media (max-width: 768px) {
+  .header-desplegable {
+    display: flex;
+  }
+
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $color-principal;
+    z-index: 1999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    &.active {
+      display: block;
+      padding: 1rem 0;
+    }
+
+    &-menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      
+      li {
+        width: 100%;
+        text-align: center;
+        
+        .header-link {
+          display: block;
+          padding: 0.75rem 0;
+          font-size: 1.1rem;
+          
+          &:hover {
+            background-color: rgba(255,255,255,0.1);
+          }
+        }
+      }
+    }
+  }
+}

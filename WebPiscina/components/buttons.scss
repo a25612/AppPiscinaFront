@@ -49,7 +49,7 @@
     height: 40px;
     width: 50px;
     border: none;
-    margin-top: 16px;
+    margin-top: 30px;
     background: $color-principal;
     border-radius: 20px;
     cursor: pointer;
@@ -74,11 +74,11 @@
 
   .nav-calendario {
     position: fixed;
-    top: 0;
+    top: 1px;
     right: -53%;
     width: 41%;
     height: 100%;
-    margin-top: 100px;
+    margin-top: 101px;
     background: white;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
     transition: right 0.5s ease-out; 

@@ -9,7 +9,7 @@
     left: -35%;
     width: 25%;
     height: 100%;
-    margin-top: 100px;
+    margin-top: 101px;
     background: $color-principal;
     box-shadow: 2px 0 8px $color-terciario;
     transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -41,7 +41,7 @@
 
     &.active {
       left: 0;
-      margin-top: 100px;
+      margin-top: 101px;
     }
   }
 

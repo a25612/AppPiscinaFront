@@ -43,14 +43,20 @@
       padding: 12px;
   
       .carousel-title {
-        font-family: 'Montserrat Bold', sans-serif;
+        font-family: $font-content;
         font-size: 16px;
         color: #333;
         margin: 0 0 8px;
       }
   
       .carousel-date {
-        font-family: 'Open Sans Regular', sans-serif;
+        font-family: $font-content;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .carousel-autor {
+        font-family: $font-content;
         font-size: 14px;
         color: #666;
       }
