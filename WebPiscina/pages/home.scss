@@ -27,14 +27,16 @@
         margin: 1rem 0;
 
         .menu-izquierda-link {
+          display: flex; 
+          align-items: center;
           text-decoration: none;
-          color: #fff;
-          font-size: 1rem;
-          transition: color 0.3s ease;
-          
-          i{
-            margin-right: 9px;
+          color: #FFFFFF;
+
+          i {
+            margin-right: 15px; 
+            font-size: 1.2rem; 
           }
+
 
           &:hover {
             color: #dedfe1;
@@ -74,7 +76,7 @@
   }
 }
 
-.titulo-anuncios{
+.titulo-anuncios {
   margin-top: 60px;
 }
 
@@ -117,10 +119,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    max-width: 350px; 
+    max-width: 350px;
     margin: 0 auto;
   }
 

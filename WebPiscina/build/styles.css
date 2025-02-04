@@ -25,13 +25,14 @@
   margin: 1rem 0;
 }
 .desplegable-izquierda .nav-izquierda-menu li .menu-izquierda-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  color: #FFFFFF;
 }
 .desplegable-izquierda .nav-izquierda-menu li .menu-izquierda-link i {
-  margin-right: 9px;
+  margin-right: 15px;
+  font-size: 1.2rem;
 }
 .desplegable-izquierda .nav-izquierda-menu li .menu-izquierda-link:hover {
   color: #dedfe1;
