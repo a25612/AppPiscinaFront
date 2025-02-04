@@ -37,7 +37,7 @@
           }
 
           &:hover {
-            color: #c1c4c6;
+            color: #dedfe1;
           }
         }
       }
@@ -117,10 +117,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    gap: 1.5rem; // Espaciado uniforme
+    gap: 1.5rem; 
     justify-content: center;
     align-items: center;
-    max-width: 350px; // Ajuste para centrar mejor
+    max-width: 350px; 
     margin: 0 auto;
   }
 
